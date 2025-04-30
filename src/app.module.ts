@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import SupabaseConfig from '../libs/lib/src/config/supabase.config';
 import { envValidationSchema } from '../libs/lib/src/config/env.schema';
 import { AuthModule } from './auth/auth.module';
+import { GroupsModule } from './groups/groups.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { AuthModule } from './auth/auth.module';
       validationSchema: envValidationSchema,
     }),
     AuthModule,
+    GroupsModule,
   ],
   controllers: [AppController],
   providers: [AppService, SupabaseConfig],
